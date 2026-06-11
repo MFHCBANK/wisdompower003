@@ -406,10 +406,10 @@
       align-items: start;
     }
 
-    form {
+    .google-form-card {
       background: #f7faf3;
       color: #12200f;
-      padding: 28px;
+      padding: 18px;
       border-radius: 28px;
       box-shadow: var(--shadow);
     }
@@ -463,6 +463,29 @@
       border-radius: 14px;
       padding: 16px;
       font-size: 17px;
+    }
+
+    .google-form-frame {
+      display: block;
+      width: 100%;
+      min-height: 920px;
+      border: 0;
+      border-radius: 18px;
+      background: white;
+    }
+
+    .form-fallback {
+      margin: 14px 0 0;
+      text-align: center;
+      color: #506247;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .form-fallback a {
+      color: #2f7d0e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .privacy {
@@ -536,7 +559,7 @@
         inset: 18px 18px auto;
         padding: 22px;
       }
-      form {
+      .google-form-card {
         padding: 22px;
       }
     }
@@ -702,91 +725,27 @@
             請填寫基本資料、經驗與可上工時間。工頭會依照你的地區、技能與合作方式安排後續聯繫。
           </p>
           <p style="color: var(--danger); font-weight: 900;">
-            提醒：本頁表單目前為前端示範版，正式上線時可接 Google 表單、Google Sheet、LINE OA 或後台資料庫。
+            提醒：表單資料將送至 Google 表單，請確認填寫內容正確後再送出。
           </p>
         </div>
 
-        <form action="#" method="post">
+        <div class="google-form-card">
           <h2 class="form-title">招募登錄表</h2>
-          <p class="form-note">欄位可依工頭實際需求再簡化。</p>
+          <p class="form-note">請依序填寫 9 項招募資料，送出後工頭會依內容安排後續聯繫。</p>
 
-          <div class="field">
-            <label for="name">姓名 *</label>
-            <input id="name" name="name" type="text" placeholder="請輸入您的姓名" required />
-          </div>
+          <iframe
+            class="google-form-frame"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfIDdD6hbj1uE-Yz3OkwsKFrDGjZ0abIZaPE-fzqvIdmPwxqg/viewform?embedded=true"
+            loading="lazy"
+            title="綠鬃蜥智能水電班人才招募 Google 表單">載入中…</iframe>
 
-          <div class="field">
-            <label for="phone">手機號碼 *</label>
-            <input id="phone" name="phone" type="tel" placeholder="請輸入您的手機號碼" required />
-          </div>
-
-          <div class="field">
-            <label for="line">LINE ID</label>
-            <input id="line" name="line" type="text" placeholder="請輸入您的 LINE ID" />
-          </div>
-
-          <div class="field">
-            <label for="area">居住地區 *</label>
-            <select id="area" name="area" required>
-              <option value="">請選擇地區</option>
-              <option>桃園</option>
-              <option>新竹</option>
-              <option>苗栗</option>
-              <option>台北／新北</option>
-              <option>其他地區</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="role">目前身份 *</label>
-            <select id="role" name="role" required>
-              <option value="">請選擇身份</option>
-              <option>水電技師</option>
-              <option>半技師</option>
-              <option>學徒</option>
-              <option>機電配線師傅</option>
-              <option>弱電／網路線施工人員</option>
-              <option>其他</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="experience">水電相關年資</label>
-            <select id="experience" name="experience">
-              <option value="">請選擇年資</option>
-              <option>無經驗，但願意學習</option>
-              <option>未滿 1 年</option>
-              <option>1–3 年</option>
-              <option>3–5 年</option>
-              <option>5 年以上</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="start">可上工時間 *</label>
-            <select id="start" name="start" required>
-              <option value="">請選擇可上工時間</option>
-              <option>立即可上工</option>
-              <option>一週內</option>
-              <option>兩週內</option>
-              <option>一個月內</option>
-              <option>需再討論</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="pay">期待待遇</label>
-            <input id="pay" name="pay" type="text" placeholder="例如：日薪／月薪／可面議" />
-          </div>
-
-          <div class="field">
-            <label for="message">簡單自我介紹／過去經驗</label>
-            <textarea id="message" name="message" placeholder="請簡單說明做過哪些工程、會哪些技術、是否有相關證照"></textarea>
-          </div>
-
-          <button class="btn btn-primary submit" type="submit">送出資料，等待工頭聯繫 ➜</button>
+          <p class="form-fallback">
+            若表單無法顯示，請
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIDdD6hbj1uE-Yz3OkwsKFrDGjZ0abIZaPE-fzqvIdmPwxqg/viewform?usp=header" target="_blank" rel="noopener">開啟 Google 表單</a>
+            填寫。
+          </p>
           <p class="privacy">送出即表示同意將資料作為招募聯繫用途。</p>
-        </form>
+        </div>
       </div>
     </section>
   </main>
